@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>changelly-3commas</title>
+</head>
+<body>
+  <style>
+  .outer {
+    text-align: center;
+  }
+</style>
+<script type="text/javascript">
+baseUrl = "https://widgets.cryptocompare.com/";
+var scripts = document.getElementsByTagName("script");
+var embedder = scripts[ scripts.length - 1 ];
+var cccTheme = {"Tabs":{"activeBorderColor":"#49A39A"},"Highlights":{"borderColor":"#49A39A"}};
+(function (){
+var appName = encodeURIComponent(window.location.hostname);
+if(appName==""){appName="local";}
+var s = document.createElement("script");
+s.type = "text/javascript";
+s.async = true;
+var theUrl = baseUrl+'serve/v1/coin/summary?fsym=BTC&tsyms=USD,EUR,CNY,GBP,GOLD,JPY,RUB,SGD,AUD,PLN,KRW';
+s.src = theUrl + ( theUrl.indexOf("?") >= 0 ? "&" : "?") + "app=" + appName;
+embedder.parentNode.appendChild(s);
+})();
+</script>
+
+</body>
+</html>
