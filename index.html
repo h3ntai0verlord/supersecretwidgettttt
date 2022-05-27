@@ -16,18 +16,19 @@
 baseUrl = "https://widgets.cryptocompare.com/";
 var scripts = document.getElementsByTagName("script");
 var embedder = scripts[ scripts.length - 1 ];
-var cccTheme = {"Tabs":{"activeBorderColor":"#49A39A"},"Highlights":{"borderColor":"#49A39A"}};
+var cccTheme = {"Tabs":{"activeBorderColor":"rgba(73, 163, 154, 1)"},"Highlights":{"borderColor":"rgba(73, 163, 154, 1)"}};
 (function (){
 var appName = encodeURIComponent(window.location.hostname);
 if(appName==""){appName="local";}
 var s = document.createElement("script");
 s.type = "text/javascript";
 s.async = true;
-var theUrl = baseUrl+'serve/v1/coin/summary?fsym=BTC&tsyms=USD,EUR,CNY,GBP,GOLD,JPY,RUB,SGD,AUD,PLN,KRW';
+var theUrl = baseUrl+'serve/v1/coin/summary?fsym=BTC&tsyms=USD,EUR,CNY,GBP,GOLD,JPY,RUB,SGD,KRW,PLN,HUF';
 s.src = theUrl + ( theUrl.indexOf("?") >= 0 ? "&" : "?") + "app=" + appName;
 embedder.parentNode.appendChild(s);
 })();
 </script>
+
   </div>
   <br>
   <br>
